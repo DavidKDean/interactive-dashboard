@@ -3,96 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="My Interactive Dashboard">
-    <title>My Interactive Dashboard</title>
-
+    <title>Interactive Productivity Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-        }
-
-        .form-group input {
-            padding: 0.5rem;
-            border: 1px solid #aaa;
-            border-radius: 4px;
-        }
-
-        #weekly-tasks {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-
-        #weekly-goal-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 500px;
-        }
-
-        #goal-btn {
-            width: fit-content;
-            padding: 0.6rem 1.2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        #goal-message {
-            margin-top: 1rem;
-            font-weight: 600;
-        }
-    </style>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-          crossorigin="anonymous">
-
-    <script defer
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <header>
-        <h1>My Interactive Dashboard</h1>
-    </header>
-
-    <p>
-        This dashboard was created by David Dean for the WEB-115 course at Wake Tech.
-    </p>
-
-    <script>
-        document.write("This dashboard demonstrates how JavaScript can be used to create interactive websites.");
-    </script>
-
-    <noscript>
-        Unfortunately, your web browser does not support JavaScript.
-    </noscript>
-
     <div class="container">
+
+        <header>
+            <h1>Interactive Productivity Dashboard</h1>
+            <p>Web Markup and Scripting - 2026FA.WEB.115.0002</p>
+        </header>
+
         <div class="row">
 
-            <!-- Weekly Task Goal Container -->
+            <!-- Weekly Task Goals -->
             <div class="col" id="weekly-tasks">
 
-                <!-- External JavaScript -->
-                <script src="js/task-manager.js"></script>
+                <h2>Weekly Task Goals</h2>
 
                 <form id="weekly-goal-form">
 
                     <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="user-name">Name:</label>
+                        <input type="text" id="user-name" name="user-name" required>
                     </div>
 
                     <div class="form-group">
@@ -101,19 +36,85 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="weekly-bonus">Weekly Bonus Tasks:</label>
-                        <input type="number" id="weekly-bonus" name="weekly-bonus" min="0" required>
+                        <label for="bonus-tasks">Weekly Bonus Tasks:</label>
+                        <input type="number" id="bonus-tasks" name="bonus-tasks" min="0" required>
                     </div>
 
-                    <button type="submit" id="goal-btn">Set Goal</button>
+                    <button type="submit" id="goal-btn">Calculate Weekly Goal</button>
 
                 </form>
 
                 <p id="goal-message"></p>
 
+                <script src="js/task-manager.js" defer></script>
+
+            </div>
+
+
+            <!-- Imperial/Metric Converter -->
+            <div class="col" id="metric-converter">
+
+                <h2>Imperial/Metric Converter</h2>
+
+                <form id="metric-converter-form">
+
+                    <div class="form-group">
+                        <label for="metric-value">Value:</label>
+                        <input
+                            type="number"
+                            id="metric-value"
+                            name="metric-value"
+                            step="any"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="conversion-type">Conversion Type:</label>
+
+                        <select id="conversion-type" name="conversion-type" required>
+                            <option value="">Select a conversion</option>
+                            <option value="inch to centimeter">
+                                Inch to Centimeter
+                            </option>
+                            <option value="foot to centimeter">
+                                Foot to Centimeter
+                            </option>
+                            <option value="yard to meter">
+                                Yard to Meter
+                            </option>
+                            <option value="mile to kilometer">
+                                Mile to Kilometer
+                            </option>
+                            <option value="centimeter to inch">
+                                Centimeter to Inch
+                            </option>
+                            <option value="centimeter to foot">
+                                Centimeter to Foot
+                            </option>
+                            <option value="meter to yard">
+                                Meter to Yard
+                            </option>
+                            <option value="kilometer to mile">
+                                Kilometer to Mile
+                            </option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="convert-btn">
+                        Convert
+                    </button>
+
+                </form>
+
+                <p id="conversion-result"></p>
+
+                <script src="js/metric-converter.js" defer></script>
+
             </div>
 
         </div>
+
     </div>
 
 </body>

@@ -1,9 +1,112 @@
 body {
     background-color: #f0f8ff;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 h1 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.col {
+    flex: 1 1 400px;
+}
+
+#weekly-tasks,
+#metric-converter {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.5rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#weekly-goal-form,
+#metric-converter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 500px;
+}
+
+#goal-btn,
+#convert-btn {
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+#goal-message,
+#conversion-result {
+    margin-top: 1rem;
+    font-weight: bold;
+    min-height: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        flex: 1 1 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
 }
