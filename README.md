@@ -73,3 +73,15 @@ BEGIN
         DISPLAY "Invalid conversion selected."
 
 END
+
+## Magic Eight Ball
+
+The Magic Eight Ball allows the user to enter a yes/no question and receive a randomly selected response. The application stores possible responses in an array and uses JavaScript to randomly select and display an answer.
+
+The Magic Eight Ball checks the question field before displaying an answer. If no question is entered, the user is prompted to enter a yes/no question. The reset button hides the current response so the user can ask another question.
+
+### Bonus Feature
+
+The Magic Eight Ball also includes a bonus feature that allows the user to add a new response. The **Add New Response** button prompts the user to enter a response. The new response is added to the `answers` array using `push()`.
+
+The program also uses `console.log()` to display the new response and the updated number of responses in the array.

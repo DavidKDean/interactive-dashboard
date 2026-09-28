@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Productivity Dashboard</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,7 +14,7 @@
 
         <header>
             <h1>Interactive Productivity Dashboard</h1>
-            <p>Web Markup and Scripting - 2026FA.WEB.115.0002</p>
+            <p>Web Markup and Scripting</p>
         </header>
 
         <div class="row">
@@ -21,26 +22,26 @@
             <!-- Weekly Task Goals -->
             <div class="col" id="weekly-tasks">
 
-                <h2>Weekly Task Goals</h2>
+                <h2 class="heading">Weekly Task Goals</h2>
 
                 <form id="weekly-goal-form">
 
-                    <div class="form-group">
-                        <label for="user-name">Name:</label>
-                        <input type="text" id="user-name" name="user-name" required>
-                    </div>
+                    <label for="user-name">Name:</label>
+                    <input type="text" id="user-name" name="user-name">
 
-                    <div class="form-group">
-                        <label for="daily-goal">Daily Task Goal:</label>
-                        <input type="number" id="daily-goal" name="daily-goal" min="0" required>
-                    </div>
+                    <br><br>
 
-                    <div class="form-group">
-                        <label for="bonus-tasks">Weekly Bonus Tasks:</label>
-                        <input type="number" id="bonus-tasks" name="bonus-tasks" min="0" required>
-                    </div>
+                    <label for="daily-goal">Daily Goal:</label>
+                    <input type="number" id="daily-goal" name="daily-goal">
 
-                    <button type="submit" id="goal-btn">Calculate Weekly Goal</button>
+                    <br><br>
+
+                    <label for="bonus-tasks">Bonus Tasks:</label>
+                    <input type="number" id="bonus-tasks" name="bonus-tasks">
+
+                    <br><br>
+
+                    <button id="goal-btn" type="submit">Calculate Goal</button>
 
                 </form>
 
@@ -54,54 +55,62 @@
             <!-- Imperial/Metric Converter -->
             <div class="col" id="metric-converter">
 
-                <h2>Imperial/Metric Converter</h2>
+                <h2 class="heading">Imperial/Metric Converter</h2>
 
                 <form id="metric-converter-form">
 
-                    <div class="form-group">
-                        <label for="metric-value">Value:</label>
-                        <input
-                            type="number"
-                            id="metric-value"
-                            name="metric-value"
-                            step="any"
-                            required
-                        >
-                    </div>
+                    <label for="metric-value">Value:</label>
+                    <input
+                        type="number"
+                        id="metric-value"
+                        name="metric-value"
+                        step="any"
+                        required
+                    >
 
-                    <div class="form-group">
-                        <label for="conversion-type">Conversion Type:</label>
+                    <br><br>
 
-                        <select id="conversion-type" name="conversion-type" required>
-                            <option value="">Select a conversion</option>
-                            <option value="inch to centimeter">
-                                Inch to Centimeter
-                            </option>
-                            <option value="foot to centimeter">
-                                Foot to Centimeter
-                            </option>
-                            <option value="yard to meter">
-                                Yard to Meter
-                            </option>
-                            <option value="mile to kilometer">
-                                Mile to Kilometer
-                            </option>
-                            <option value="centimeter to inch">
-                                Centimeter to Inch
-                            </option>
-                            <option value="centimeter to foot">
-                                Centimeter to Foot
-                            </option>
-                            <option value="meter to yard">
-                                Meter to Yard
-                            </option>
-                            <option value="kilometer to mile">
-                                Kilometer to Mile
-                            </option>
-                        </select>
-                    </div>
+                    <label for="conversion-type">Conversion:</label>
 
-                    <button type="submit" id="convert-btn">
+                    <select id="conversion-type" name="conversion-type">
+
+                        <option value="inch to centimeter">
+                            Inch to Centimeter
+                        </option>
+
+                        <option value="foot to centimeter">
+                            Foot to Centimeter
+                        </option>
+
+                        <option value="yard to meter">
+                            Yard to Meter
+                        </option>
+
+                        <option value="mile to kilometer">
+                            Mile to Kilometer
+                        </option>
+
+                        <option value="centimeter to inch">
+                            Centimeter to Inch
+                        </option>
+
+                        <option value="centimeter to foot">
+                            Centimeter to Foot
+                        </option>
+
+                        <option value="meter to yard">
+                            Meter to Yard
+                        </option>
+
+                        <option value="kilometer to mile">
+                            Kilometer to Mile
+                        </option>
+
+                    </select>
+
+                    <br><br>
+
+                    <button id="convert-btn" type="submit">
                         Convert
                     </button>
 
@@ -113,9 +122,68 @@
 
             </div>
 
+
+            <!-- Magic Eight Ball -->
+            <div class="col" id="magic-eight-ball">
+
+                <h2 class="heading">Magic Eight Ball</h2>
+
+                <form>
+
+                    <p>Ask the Magic Eight Ball a yes/no question:</p>
+
+                    <input
+                        id="question"
+                        name="question"
+                        size="80"
+                    >
+
+                    <br><br>
+
+                    <div id="magicEightBall">
+
+                        <div id="circle"></div>
+
+                        <img
+                            id="ball"
+                            src="img/magic-eight-ball.png"
+                            alt="Magic Eight Ball"
+                        >
+
+                    </div>
+
+                    <br>
+
+                    <button
+                        id="reset"
+                        name="reset"
+                        type="reset"
+                    >
+                        Ask another question
+                    </button>
+
+                    <button
+                        id="add-response"
+                        type="button"
+                    >
+                        Add New Response
+                    </button>
+
+                    <br>
+
+                </form>
+
+            </div>
+
         </div>
 
     </div>
+
+    <!-- Magic Eight Ball JavaScript -->
+    <script src="js/magic-eight-ball.js" defer></script>
+
+    <!-- Magic Eight Ball CSS -->
+    <link rel="stylesheet" href="css/magic-eight-ball.css">
 
 </body>
 </html>
