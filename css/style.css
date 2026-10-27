@@ -46,28 +46,8 @@ h2 {
     box-sizing: border-box;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group select {
-    padding: 0.5rem;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    font-size: 1rem;
-    box-sizing: border-box;
-    width: 100%;
-}
-
 #weekly-goal-form,
+#task-form,
 #metric-converter-form {
     display: flex;
     flex-direction: column;
@@ -75,7 +55,25 @@ h2 {
     max-width: 500px;
 }
 
+#weekly-goal-form input,
+#task-form input,
+#task-form select,
+#metric-converter-form input,
+#metric-converter-form select {
+    padding: 0.5rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#task-form input[type="checkbox"] {
+    width: auto;
+}
+
 #goal-btn,
+#add-task,
+#delete-list,
 #convert-btn {
     width: fit-content;
     padding: 0.6rem 1.2rem;
@@ -91,6 +89,20 @@ h2 {
     margin-top: 1rem;
     font-weight: bold;
     min-height: 1.5rem;
+}
+
+#task-items {
+    padding-left: 1.5rem;
+}
+
+#task-items li {
+    margin-top: 0.75rem;
+}
+
+#task-items button {
+    margin-left: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {

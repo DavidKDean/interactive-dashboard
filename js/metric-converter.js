@@ -1,55 +1,55 @@
+// Get the page elements - Start
 var convertButton = document.getElementById("convert-btn");
+var metricValueInput = document.getElementById("metric-value");
+var conversionTypeInput = document.getElementById("conversion-type");
+var conversionResult = document.getElementById("conversion-result");
+// Get the page elements - End
 
-convertButton.addEventListener("click", function(event) {
-    event.preventDefault();
 
-    var input_value = document.getElementById("metric-value").value;
-
-    var conversion_type = document.getElementById("conversion-type");
-    var selected_index = conversion_type.selectedIndex;
-
-    var conversion = document.getElementsByTagName("option")[selected_index].value;
-
-    input_value = parseFloat(input_value);
+// Convert the measurement when the button is clicked - Start
+convertButton.addEventListener("click", function () {
+    var inputValue = metricValueInput.value;
+    var conversion = conversionTypeInput.value;
 
     var result;
     var output;
 
     if (conversion === "inch to centimeter") {
-        result = input_value * 2.54;
-        output = input_value + " inches is " + result.toFixed(2) + " centimeters.";
+        result = inputValue * 2.54;
+        output = inputValue + " inches is " + result.toFixed(2) + " centimeters.";
 
     } else if (conversion === "foot to centimeter") {
-        result = input_value * 30.48;
-        output = input_value + " feet is " + result.toFixed(2) + " centimeters.";
+        result = inputValue * 30.48;
+        output = inputValue + " feet is " + result.toFixed(2) + " centimeters.";
 
     } else if (conversion === "yard to meter") {
-        result = input_value * 0.91;
-        output = input_value + " yards is " + result.toFixed(2) + " meters.";
+        result = inputValue * 0.91;
+        output = inputValue + " yards is " + result.toFixed(2) + " meters.";
 
     } else if (conversion === "mile to kilometer") {
-        result = input_value * 1.61;
-        output = input_value + " miles is " + result.toFixed(2) + " kilometers.";
+        result = inputValue * 1.61;
+        output = inputValue + " miles is " + result.toFixed(2) + " kilometers.";
 
     } else if (conversion === "centimeter to inch") {
-        result = input_value * 0.39;
-        output = input_value + " centimeters is " + result.toFixed(2) + " inches.";
+        result = inputValue * 0.39;
+        output = inputValue + " centimeters is " + result.toFixed(2) + " inches.";
 
     } else if (conversion === "centimeter to foot") {
-        result = input_value * 0.0328;
-        output = input_value + " centimeters is " + result.toFixed(2) + " feet.";
+        result = inputValue * 0.0328;
+        output = inputValue + " centimeters is " + result.toFixed(2) + " feet.";
 
     } else if (conversion === "meter to yard") {
-        result = input_value * 1.09;
-        output = input_value + " meters is " + result.toFixed(2) + " yards.";
+        result = inputValue * 1.09;
+        output = inputValue + " meters is " + result.toFixed(2) + " yards.";
 
     } else if (conversion === "kilometer to mile") {
-        result = input_value * 0.62;
-        output = input_value + " kilometers is " + result.toFixed(2) + " miles.";
+        result = inputValue * 0.62;
+        output = inputValue + " kilometers is " + result.toFixed(2) + " miles.";
 
     } else {
         output = "Please select a valid conversion.";
     }
 
-    document.getElementById("conversion-result").innerHTML = output;
+    conversionResult.innerHTML = output;
 });
+// Convert the measurement when the button is clicked - End

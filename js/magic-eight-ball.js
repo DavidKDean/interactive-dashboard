@@ -1,5 +1,5 @@
-// Array containing possible Magic Eight Ball answers
-let answers = [
+// Store the Magic Eight Ball answers - Start
+var answers = [
     "Yes, definitely!",
     "It is certain.",
     "Without a doubt.",
@@ -10,24 +10,32 @@ let answers = [
     "Outlook looks good.",
     "Signs point to yes."
 ];
+// Store the Magic Eight Ball answers - End
 
-// Function to randomly select and display an answer
+
+// Get the page elements - Start
+var ball = document.getElementById("ball");
+var questionInput = document.getElementById("question");
+var circle = document.getElementById("circle");
+var resetButton = document.getElementById("reset");
+var addResponseButton = document.getElementById("add-response");
+// Get the page elements - End
+
+
+// Select and display a random answer - Start
 function displayAnswer() {
-    let index = Math.floor(Math.random() * answers.length);
-    let answer = answers[index];
-
-    let circle = document.getElementById("circle");
+    var index = Math.floor(Math.random() * answers.length);
+    var answer = answers[index];
 
     circle.style.display = "flex";
     circle.innerHTML = answer;
 }
+// Select and display a random answer - End
 
-// Get the Magic Eight Ball image
-let ball = document.getElementById("ball");
 
-// Run when the user presses the ball
-ball.addEventListener("mousedown", function() {
-    let question = document.getElementById("question").value;
+// Check the question when the ball is pressed - Start
+ball.addEventListener("mousedown", function () {
+    var question = questionInput.value;
 
     if (question === "") {
         alert("Please enter a yes/no question.");
@@ -35,21 +43,19 @@ ball.addEventListener("mousedown", function() {
         displayAnswer();
     }
 });
+// Check the question when the ball is pressed - End
 
-// Get the reset button
-let reset = document.getElementById("reset");
 
-// Hide the answer when the reset button is clicked
-reset.addEventListener("click", function() {
-    document.getElementById("circle").style.display = "none";
+// Hide the answer when the reset button is clicked - Start
+resetButton.addEventListener("click", function () {
+    circle.style.display = "none";
 });
+// Hide the answer when the reset button is clicked - End
 
-// Get the Add New Response button
-let addResponse = document.getElementById("add-response");
 
-// Add a new response to the answers array
-addResponse.addEventListener("click", function() {
-    let newResponse = prompt("Enter a new Magic Eight Ball response:");
+// Add a response to the answers array - Start
+addResponseButton.addEventListener("click", function () {
+    var newResponse = prompt("Enter a new Magic Eight Ball response:");
 
     if (newResponse !== null && newResponse !== "") {
         answers.push(newResponse);
@@ -58,3 +64,4 @@ addResponse.addEventListener("click", function() {
         console.log("Number of responses: " + answers.length);
     }
 });
+// Add a response to the answers array - End
