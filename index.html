@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/magic-eight-ball.css">
+    <link rel="stylesheet" href="css/digital-clock.css">
 </head>
 
 <body>
@@ -19,173 +20,191 @@
             <p>Web Markup and Scripting</p>
         </header>
 
-        <div class="row">
+        <main>
 
-            <!-- Weekly Task Goals -->
-            <div class="col" id="weekly-tasks">
+            <div class="row">
 
-                <h2 class="heading">Weekly Task Goals</h2>
+                <!-- Weekly Task Goals -->
+                <div class="col" id="weekly-tasks">
 
-                <form id="weekly-goal-form">
+                    <h2 class="heading">Weekly Task Goals</h2>
 
-                    <label for="user-name">Name:</label>
-                    <input type="text" id="user-name" name="user-name">
+                    <form id="weekly-goal-form">
 
-                    <label for="daily-goal">Daily Goal:</label>
-                    <input type="number" id="daily-goal" name="daily-goal">
+                        <label for="user-name">Name:</label>
+                        <input type="text" id="user-name" name="user-name">
 
-                    <label for="bonus-tasks">Bonus Tasks:</label>
-                    <input type="number" id="bonus-tasks" name="bonus-tasks">
+                        <label for="daily-goal">Daily Goal:</label>
+                        <input type="number" id="daily-goal" name="daily-goal">
 
-                    <button id="goal-btn" type="button">Calculate Goal</button>
+                        <label for="bonus-tasks">Bonus Tasks:</label>
+                        <input type="number" id="bonus-tasks" name="bonus-tasks">
 
-                </form>
-
-                <p id="goal-message"></p>
-
-                <!-- Weekly Task List -->
-                <div id="task-list">
-
-                    <h3>Weekly Task List</h3>
-
-                    <p>Enter a task below to manage your goals.</p>
-
-                    <form id="task-form">
-
-                        <label for="task-name">Enter task:</label>
-                        <input type="text" id="task-name" name="task-name">
-
-                        <label for="task-priority">Priority:</label>
-                        <select id="task-priority" name="task-priority">
-                            <option value="High">High</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Low">Low</option>
-                        </select>
-
-                        <label for="task-important">
-                            <input type="checkbox" id="task-important" name="task-important">
-                            Important
-                        </label>
-
-                        <button id="add-task" type="button">Add Task</button>
-                        <button id="delete-list" type="button">Delete List</button>
+                        <button id="goal-btn" type="button">Calculate Goal</button>
 
                     </form>
 
-                    <ul id="task-items"></ul>
+                    <p id="goal-message"></p>
+
+                    <!-- Weekly Task List -->
+                    <div id="task-list">
+
+                        <h3>Weekly Task List</h3>
+
+                        <p>Enter a task below to manage your goals.</p>
+
+                        <form id="task-form">
+
+                            <label for="task-name">Enter task:</label>
+                            <input type="text" id="task-name" name="task-name">
+
+                            <label for="task-priority">Priority:</label>
+                            <select id="task-priority" name="task-priority">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+
+                            <label for="task-important">
+                                <input type="checkbox" id="task-important" name="task-important">
+                                Important
+                            </label>
+
+                            <button id="add-task" type="button">Add Task</button>
+                            <button id="delete-list" type="button">Delete List</button>
+
+                        </form>
+
+                        <ul id="task-items"></ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Imperial/Metric Converter -->
+                <div class="col" id="metric-converter">
+
+                    <h2 class="heading">Imperial/Metric Converter</h2>
+
+                    <form id="metric-converter-form">
+
+                        <label for="metric-value">Value:</label>
+                        <input type="number" id="metric-value" name="metric-value" step="any" required>
+
+                        <br><br>
+
+                        <label for="conversion-type">Conversion:</label>
+
+                        <select id="conversion-type" name="conversion-type">
+
+                            <option value="inch to centimeter">
+                                Inch to Centimeter
+                            </option>
+
+                            <option value="foot to centimeter">
+                                Foot to Centimeter
+                            </option>
+
+                            <option value="yard to meter">
+                                Yard to Meter
+                            </option>
+
+                            <option value="mile to kilometer">
+                                Mile to Kilometer
+                            </option>
+
+                            <option value="centimeter to inch">
+                                Centimeter to Inch
+                            </option>
+
+                            <option value="centimeter to foot">
+                                Centimeter to Foot
+                            </option>
+
+                            <option value="meter to yard">
+                                Meter to Yard
+                            </option>
+
+                            <option value="kilometer to mile">
+                                Kilometer to Mile
+                            </option>
+
+                        </select>
+
+                        <br><br>
+
+                        <button id="convert-btn" type="button">
+                            Convert
+                        </button>
+
+                    </form>
+
+                    <p id="conversion-result"></p>
+
+                </div>
+
+
+                <!-- Magic Eight Ball -->
+                <div class="col" id="magic-eight-ball">
+
+                    <h2 class="heading">Magic Eight Ball</h2>
+
+                    <form>
+
+                        <p>Ask the Magic Eight Ball a yes/no question:</p>
+
+                        <input id="question" name="question" size="80">
+
+                        <br><br>
+
+                        <div id="magicEightBall">
+
+                            <div id="circle"></div>
+
+                            <img id="ball" src="img/magic-eight-ball.png" alt="Magic Eight Ball">
+
+                        </div>
+
+                        <br>
+
+                        <button id="reset" name="reset" type="reset">
+                            Ask another question
+                        </button>
+
+                        <button id="add-response" type="button">
+                            Add New Response
+                        </button>
+
+                        <br>
+
+                    </form>
+
+                </div>
+
+
+                <!-- Digital Clock -->
+                <div class="col" id="digital-clock">
+
+                    <h3>Current Time & Date</h3>
+
+                    <p id="clock-face"></p>
+
+                    <p id="calendar-date"></p>
 
                 </div>
 
             </div>
 
-
-            <!-- Imperial/Metric Converter -->
-            <div class="col" id="metric-converter">
-
-                <h2 class="heading">Imperial/Metric Converter</h2>
-
-                <form id="metric-converter-form">
-
-                    <label for="metric-value">Value:</label>
-                    <input type="number" id="metric-value" name="metric-value" step="any" required>
-
-                    <br><br>
-
-                    <label for="conversion-type">Conversion:</label>
-
-                    <select id="conversion-type" name="conversion-type">
-
-                        <option value="inch to centimeter">
-                            Inch to Centimeter
-                        </option>
-
-                        <option value="foot to centimeter">
-                            Foot to Centimeter
-                        </option>
-
-                        <option value="yard to meter">
-                            Yard to Meter
-                        </option>
-
-                        <option value="mile to kilometer">
-                            Mile to Kilometer
-                        </option>
-
-                        <option value="centimeter to inch">
-                            Centimeter to Inch
-                        </option>
-
-                        <option value="centimeter to foot">
-                            Centimeter to Foot
-                        </option>
-
-                        <option value="meter to yard">
-                            Meter to Yard
-                        </option>
-
-                        <option value="kilometer to mile">
-                            Kilometer to Mile
-                        </option>
-
-                    </select>
-
-                    <br><br>
-
-                    <button id="convert-btn" type="button">
-                        Convert
-                    </button>
-
-                </form>
-
-                <p id="conversion-result"></p>
-
-            </div>
-
-
-            <!-- Magic Eight Ball -->
-            <div class="col" id="magic-eight-ball">
-
-                <h2 class="heading">Magic Eight Ball</h2>
-
-                <form>
-
-                    <p>Ask the Magic Eight Ball a yes/no question:</p>
-
-                    <input id="question" name="question" size="80">
-
-                    <br><br>
-
-                    <div id="magicEightBall">
-
-                        <div id="circle"></div>
-
-                        <img id="ball" src="img/magic-eight-ball.png" alt="Magic Eight Ball">
-
-                    </div>
-
-                    <br>
-
-                    <button id="reset" name="reset" type="reset">
-                        Ask another question
-                    </button>
-
-                    <button id="add-response" type="button">
-                        Add New Response
-                    </button>
-
-                    <br>
-
-                </form>
-
-            </div>
-
-        </div>
+        </main>
 
     </div>
 
+    <!-- JavaScript Files -->
     <script src="js/task-manager.js" defer></script>
     <script src="js/metric-converter.js" defer></script>
     <script src="js/magic-eight-ball.js" defer></script>
+    <script src="js/digital-clock.js" defer></script>
 
 </body>
 

@@ -1,0 +1,17 @@
+
+#digital-clock {
+    text-align: center;
+    color: #333333;
+    padding: 15px;
+}
+
+#clock-face {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255, 136, 0);
+}
+
+#calendar-date {
+    font-size: 18px;
+    color: rgb(100, 0, 13);
+}
